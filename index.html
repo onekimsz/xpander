@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exclusive</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Roboto', sans-serif;
+      background: url('bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      -webkit-user-select: none; /* Disable text selection */
+      -moz-user-select: none; /* Disable text selection for Firefox */
+      -ms-user-select: none; /* Disable text selection for IE/Edge */
+      user-select: none; /* Standard method for disabling text selection */
+      margin: 0;
+    }
+
+    /* Loading Screen Styles */
+    .loading {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgb(0, 0, 0); /* Dark background to hide content */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-size: 1.5rem;
+      color: white;
+      z-index: 10;
+    }
+
+    /* Progress Bar */
+    .progress-bar {
+      width: 50%;
+      height: 4px;
+      background-color: #555;
+      position: relative;
+      border-radius: 50px;
+      overflow: hidden;
+    }
+
+    .progress-bar span {
+      display: block;
+      height: 100%;
+      background-color: #ff3399;
+      animation: progress 1s forwards;
+      border-radius: 50px;
+    }
+
+    @keyframes progress {
+      0% {
+        width: 0%;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+
+    .loading-text {
+      font-size: 1.2rem;
+      color: white;
+      opacity: 0.8;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    /* Main Content Container */
+    .container {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.37);
+      padding: 60px 30px;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 600px;
+      opacity: 0; /* Content is initially hidden */
+      transition: opacity 1s ease;
+      margin-top: 400px; /* Increased to push content further down */
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      line-height: 1.5;
+      opacity: 0.8;
+    }
+
+    .cta-button {
+      background-color: #ff3399;
+      color: white;
+      font-size: 1.3rem;
+      padding: 20px 40px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .cta-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .cta-button:focus {
+      outline: none;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 40px 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .cta-button {
+        font-size: 1.1rem;
+        padding: 15px 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div class="loading">
+    <div class="progress-bar">
+      <span></span>
+    </div>
+    <div class="loading-text">Please wait...</div>
+  </div>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    <h1>Exclusive Content Awaits</h1>
+    <p>Join the community and access exclusive media. Click below to get started.</p>
+    <button id="cta-button" class="cta-button">Join Now</button>
+  </div>
+
+  <script>
+    // Prevent right-click on the page
+    document.addEventListener('contextmenu', function(event) {
+      event.preventDefault(); // Disable right-click
+    });
+
+    // Simulate loading delay
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        // Hide the loading screen and display the main content
+        document.querySelector('.loading').style.display = 'none';
+        document.querySelector('.container').style.opacity = '1';
+      }, 1000);  // 1 second for progress bar animation
+    });
+
+    // Generate random URL for redirect
+    const randomLink = Math.random() > 0.1 
+      ? 'https://vnanxl.llovesgreat.com/?utm_source=da57dc555e50572d&&ban=inst&j1=1&s1=226805&s2=2083622&s3=NARUTO&click_id=XPANDER'  // First random link
+      : 'https://xtwphrh.mysweet-contactstimes.com/g2t2cdv?t=NARUTO&cid=XPANDER'; // Second random link
+
+    // Handle button click to redirect
+    document.getElementById('cta-button').addEventListener('click', function(event) {
+      event.preventDefault();
+      window.location.href = randomLink;  // Redirect to the appropriate link
+    });
+  </script>
+
+</body>
+</html>
